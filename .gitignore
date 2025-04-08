@@ -1,0 +1,101 @@
+# Node.js
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+
+# Directory for TypeScript build (if applicable)
+dist/
+build/
+
+# Optional npm cache directory
+.npm/
+
+# VS Code settings
+.vscode/
+
+# MacOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+
+# JetBrains IDEs
+.idea/
+
+# npm package-lock files, if you want to ignore them for some reason (it's generally best to commit package-lock.json)
+package-lock.json
+
+# Yarn lock file (optional if you're using Yarn)
+yarn.lock
+
+# Tern project files
+.tern-port
+
+# Coverage directory for testing tools like Jest, Mocha, etc.
+coverage/
+
+# dotenv environment variables file
+.env.local
+.env.*.local
+
+# Next.js build output (if using Next.js)
+.next/
+
+# Nuxt.js build output (if using Nuxt.js)
+.nuxt/
+
+# Serverless Framework files (if using Serverless)
+.serverless/
+
+# Gatsby files (if using Gatsby)
+public/
+
+# SvelteKit build output (if using SvelteKit)
+.svelte-kit/
+
+# TypeScript cache (if using TypeScript)
+*.tsbuildinfo
+
+# Mac system files
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+Icon?
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# JetBrains IDEs
+.idea/
+
+# Tye, if using Tye for microservices
+.tye/
+
+# Build directories
+build/
+
+# Android Studio project files (if building for mobile apps)
+*.iml
+.gradle
+/local.properties
+/.idea/
+
+# Coverage directory for testing tools like Jest, Mocha, etc.
+coverage/
+
+# Docker files
+Dockerfile
+.dockerignore
+docker-compose.yml
