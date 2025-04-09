@@ -1,101 +1,87 @@
-# Node.js
+# Node modules
 node_modules/
 
 # Logs
-logs
+logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
-yarn-error.log*
+pnpm-debug.log*
 
 # Environment variables
 .env
+.env.*.local
 
-# Directory for TypeScript build (if applicable)
+# Build and dist folders
 dist/
 build/
 
-# Optional npm cache directory
-.npm/
+# Database dumps
+*.sql
+*.sqlite
 
-# VS Code settings
+# VSCode settings
 .vscode/
 
-# MacOS system files
+# macOS system files
 .DS_Store
 
 # Windows system files
 Thumbs.db
+ehthumbs.db
+Desktop.ini
 
 # JetBrains IDEs
 .idea/
+*.iml
 
-# npm package-lock files, if you want to ignore them for some reason (it's generally best to commit package-lock.json)
-package-lock.json
-
-# Yarn lock file (optional if you're using Yarn)
-yarn.lock
-
-# Tern project files
-.tern-port
-
-# Coverage directory for testing tools like Jest, Mocha, etc.
+# Coverage reports
 coverage/
+.nyc_output/
 
-# dotenv environment variables file
-.env.local
-.env.*.local
+# Optional npm cache directory
+.npm/
 
-# Next.js build output (if using Next.js)
-.next/
-
-# Nuxt.js build output (if using Nuxt.js)
-.nuxt/
-
-# Serverless Framework files (if using Serverless)
-.serverless/
-
-# Gatsby files (if using Gatsby)
-public/
-
-# SvelteKit build output (if using SvelteKit)
-.svelte-kit/
-
-# TypeScript cache (if using TypeScript)
+# TypeScript cache
 *.tsbuildinfo
 
-# Mac system files
-.AppleDouble
-.LSOverride
+# TernJS
+.tern-port
 
-# Thumbnails
-Icon?
+# Output of 'npm pack'
+*.tgz
 
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
+# Yarn Integrity file
+.yarn-integrity
 
-# JetBrains IDEs
-.idea/
+# Lockfiles (if you're not committing them)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
 
-# Tye, if using Tye for microservices
-.tye/
+# SvelteKit (in case)
+.svelte-kit/
 
-# Build directories
-build/
+# Next.js (if used)
+.next/
 
-# Android Studio project files (if building for mobile apps)
-*.iml
-.gradle
-/local.properties
-/.idea/
+# Nuxt.js
+.nuxt/
 
-# Coverage directory for testing tools like Jest, Mocha, etc.
-coverage/
+# Gatsby
+public/
 
-# Docker files
-Dockerfile
+# Docker
 .dockerignore
+Dockerfile
 docker-compose.yml
+docker-compose.override.yml
+
+# Firebase
+.firebase/
+
+# Serverless
+.serverless/
+
+# Tye
+.tye/
