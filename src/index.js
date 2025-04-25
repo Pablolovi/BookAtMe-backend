@@ -19,8 +19,11 @@ connectDB().then(() => {
 });
 
 // Middlewares
-app.use(cors());
-app.use(express.json());  // Asegúrate de que express.json() esté antes de las rutas
+app.use(cors({
+    origin: 'http://localhost:5173',  // Permite solicitudes desde tu frontend
+    credentials: true,               // Permite el uso de credenciales
+  }));
+  app.use(express.json());  // Asegúrate de que express.json() esté antes de las rutas
 
 // Rutas
 app.use('/api/auth', authRoutes);
