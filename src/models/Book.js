@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 const bookSchema = new mongoose.Schema({
   user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   title: { type: String, required: true },
-  author: { type: String },
+  author_name: { type: [String], default: ['Autor desconocido'] },
   status: {
     type: String,
     enum: ['pendiente', 'leyendo', 'terminado', 'relectura', 'popular'],

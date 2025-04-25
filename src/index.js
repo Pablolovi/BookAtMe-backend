@@ -1,4 +1,3 @@
-// src/index.js
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
@@ -6,7 +5,6 @@ import connectDB from './config/db.js';
 import authRoutes from './routes/auth.routes.js';
 import bookRoutes from './routes/books.routes.js';
 import taskRoutes from './routes/task.routes.js';
-import postRoutes from './routes/posts.routes.js';
 import userRoutes from './routes/users.routes.js';
 
 dotenv.config();
@@ -28,7 +26,6 @@ app.use(express.json());  // Asegúrate de que express.json() esté antes de las
 app.use('/api/auth', authRoutes);
 app.use('/api/books', bookRoutes);
 app.use('/api/tasks', taskRoutes);
-app.use('/api/posts', postRoutes);
 app.use('/api/users', userRoutes);
 
 // Manejo de errores

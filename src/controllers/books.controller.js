@@ -1,7 +1,7 @@
-// src/controllers/books.controller.js
 import Book from '../models/Book.js';
 import axios from 'axios';
 
+// Obtener los libros del usuario
 export const getBooks = async (req, res) => {
     try {
         const books = await Book.find({ user: req.user.id });
@@ -11,13 +11,14 @@ export const getBooks = async (req, res) => {
     }
 };
 
+// Agregar un nuevo libro
 export const addBook = async (req,res) => {
     const { title, author, status, totalPages, startedAt } = req.body;
 
     const book = new Book({
         user: req.user.id,
         title,
-        author,
+        author_name,
         status,
         totalPages,
         startedAt
@@ -31,6 +32,7 @@ export const addBook = async (req,res) => {
     }
 };
 
+// Actualizar un libro existente
 export const updateBook = async (req, res) => {
     const { title, author, status, totalPages, currentPage, finishedAt } = req.body;
 
@@ -46,7 +48,7 @@ export const updateBook = async (req, res) => {
         }
 
         book.title = title || book.title;
-        book.author = author || book.author;
+        book.author_name = author || book.author_name;
         book.status = status || book.status;
         book.totalPages = totalPages || book.totalPages;
         book.currentPage = currentPage || book.currentPage;
@@ -59,6 +61,7 @@ export const updateBook = async (req, res) => {
     }
 };
 
+// Eliminar un libro
 export const deleteBook = async (req, res) => {
     try {
         const book = await Book.findById(req.params.id);
@@ -78,6 +81,7 @@ export const deleteBook = async (req, res) => {
     }
 };
 
+// Buscar libros externos (OpenLibrary)
 export const searchExternalBooks = async (req, res) => {
     const { query } = req.query; 
 
