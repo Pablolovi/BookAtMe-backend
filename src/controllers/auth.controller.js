@@ -33,16 +33,19 @@ export const loginUser = async (req, res) => {
     const { email, password } = req.body;
 
     const user = await User.findOne({ email });
-    const validPassword = user && await bcrypt.compare(password, user.password);
-
-    if (user && validPassword) {
-        res.json({
-            _id: user._id,
-            name: user.name,
-            email: user.email,
-            token: generateToken(user._id)
-        });
-    } else {
-        res.status(401).json({ message: "Credenciales incorrectas" });
+    if (!user) {
+        return res.status(401).json({ message: "Credenciales incorrectas" });  // Usuario no encontrado
     }
+
+    const validPassword = await bcrypt.compare(password, user.password);
+    if (!validPassword) {
+        return res.status(401).json({ message: "Credenciales incorrectas" });  // Contraseña incorrecta
+    }
+
+    res.json({
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        token: generateToken(user._id)
+    });
 };
