@@ -19,9 +19,13 @@ connectDB().then(() => {
 });
 
 // Middlewares
+const allowedOrigins = [
+    'http://localhost:5173',
+    'https://680e9d6d50e613a880245933--fastidious-gelato-73771b.netlify.app']
+
 app.use(cors({
-    origin: 'http://localhost:5173',  // Permite solicitudes desde tu frontend
-    credentials: true,               // Permite el uso de credenciales
+    origin: allowedOrigins,
+    credentials: true,
   }));
   app.use(express.json());  // Asegúrate de que express.json() esté antes de las rutas
 
