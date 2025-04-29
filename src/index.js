@@ -21,7 +21,7 @@ connectDB().then(() => {
 // Middlewares
 const allowedOrigins = [
     'http://localhost:5173',
-    'https://680e9d6d50e613a880245933--fastidious-gelato-73771b.netlify.app'
+    'https://fastidious-gelato-73771b.netlify.app'
 ];
 
 app.use(cors({
